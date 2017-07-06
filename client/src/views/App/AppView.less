@@ -1,0 +1,129 @@
+@header_height:50px;
+@header_color:#FFF;
+
+.headerStyle(){
+  width: 100%;
+  background-color: #496b8c;
+  background-image: linear-gradient(180deg,#415b73,#496b8c);
+  line-height: @header_height;
+  height: @header_height;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .17);
+  color: @header_color;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-bottom: 1px solid #e7eaec!important;
+}
+
+
+.AppView {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  min-width: 1270px;
+}
+
+
+.ant-layout-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.ant-layout-siderbar {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 240px;
+  transition: all 0.3s;
+  overflow: hidden;
+
+  .header-logo {
+    font-size: 14px;
+    float: left;
+    margin-left: 30px;
+    font-family: 'Raleway', 'Hiragino Sans GB', sans-serif;
+  }
+
+  .header{
+    .headerStyle();
+  }
+
+  &.sidebar-fold-true{
+    width: 0px;
+    .ant-menu,.header-logo{
+      display: none;
+    }
+  }
+
+}
+
+.ant-breadcrumb {
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  color: #666;
+  padding-left: 10px;
+  border-bottom: solid 2px #2f4050;
+  background-color: #fafafa;
+  .item{
+    font-size: 13px;
+    background: #2f4050;
+    color: #ffffff;
+    float: left;
+    padding: 0 25px;
+  }
+}
+
+.ant-layout-main {
+  flex-grow: 1;
+  flex-shrink: 1;
+  border-left: 1px solid #e9e9e9;
+  background-color: #f3f3f4;
+}
+
+.ant-layout-content{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+
+.ant-layout-header {
+  overflow: hidden;
+  .headerStyle();
+
+  .header-left{
+    margin-left: 10px;
+
+    .header-menu-fold{
+      cursor: pointer;
+      font-size: 16px;
+      width: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .header-right {
+    float: right;
+    padding-right: 30px;
+    font-size: 14px;
+    .userName {
+      margin-right: 20px;
+      cursor: pointer;
+      color: @header_color;
+      .anticon {
+        padding-right: 5px;
+        font-size: 16px;
+      }
+    }
+    .logout {
+      cursor: pointer;
+      .poweroff {
+        padding-right: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+

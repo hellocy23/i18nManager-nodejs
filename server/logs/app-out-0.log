@@ -1,0 +1,78 @@
+2017-06-05 20:09 +08:00: server is running on port(dev): 3000
+2017-06-05 20:09 +08:00: ------数据库连接成功！------
+2017-06-05 20:16 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m18.938 ms - 210[0m
+2017-06-05 20:17 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m2.680 ms - -[0m
+2017-06-05 20:18 +08:00: [0mDELETE /api/i18nproject/deleteProject [32m200 [0m79.027 ms - -[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m80.425 ms - 99[0m
+2017-06-05 20:18 +08:00: [0mDELETE /api/i18nproject/deleteProject [32m200 [0m1.747 ms - -[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m82.357 ms - 2[0m
+2017-06-05 20:18 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m11.607 ms - 7675[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m3.628 ms - -[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.063 ms - -[0m
+2017-06-05 20:18 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m4.871 ms - 7675[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m2.088 ms - -[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.292 ms - -[0m
+2017-06-05 20:18 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m3.730 ms - 7675[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m2.312 ms - -[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m0.835 ms - -[0m
+2017-06-05 20:18 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m4.007 ms - 7675[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.268 ms - -[0m
+2017-06-05 20:18 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m4.056 ms - 7675[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m2.751 ms - 2[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m10.432 ms - -[0m
+2017-06-05 20:18 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m7.444 ms - 7675[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m4.645 ms - -[0m
+2017-06-05 20:18 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m2.662 ms - 2[0m
+2017-06-05 20:19 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m11.455 ms - 7675[0m
+2017-06-05 20:19 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m3.775 ms - 2[0m
+2017-06-05 20:19 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m1.498 ms - 2[0m
+2017-06-05 20:19 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m4.177 ms - 21[0m
+2017-06-05 20:19 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m1.641 ms - 2[0m
+2017-06-05 20:19 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m2.191 ms - 21[0m
+2017-06-05 20:19 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.193 ms - -[0m
+2017-06-05 20:19 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.021 ms - -[0m
+2017-06-05 20:19 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.288 ms - -[0m
+2017-06-05 20:19 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.236 ms - -[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nproject/addProject [32m200 [0m14.422 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m2.571 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m2.784 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.629 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.126 ms - -[0m
+2017-06-05 20:20 +08:00: empty uploads success!
+2017-06-05 20:20 +08:00: server is running on port(dev): 3000
+2017-06-05 20:20 +08:00: ------数据库连接成功！------
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m37.232 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m13.276 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m2.015 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.233 ms - -[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m3.424 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.696 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.580 ms - -[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m2.346 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.512 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.941 ms - -[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m5.276 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.241 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m2.299 ms - -[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m3.632 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.339 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.138 ms - -[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [36m304 [0m1.199 ms - -[0m
+2017-06-05 20:20 +08:00: empty uploads success!
+2017-06-05 20:20 +08:00: server is running on port(dev): 3000
+2017-06-05 20:20 +08:00: ------数据库连接成功！------
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m19.687 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m3.026 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m24.738 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m3.464 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m1.516 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m1.287 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m3.300 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m2.665 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m1.846 ms - 112[0m
+2017-06-05 20:20 +08:00: [0mPOST /api/i18nitem/queryItem [32m200 [0m2.997 ms - 21[0m
+2017-06-05 20:20 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m4.285 ms - 112[0m
+2017-06-05 20:21 +08:00: [0mGET /api/i18nproject/getProjectList [32m200 [0m2.004 ms - 112[0m
+2017-06-05 20:21 +08:00: empty uploads success!
+2017-06-05 20:21 +08:00: server is running on port(dev): 3000
+2017-06-05 20:21 +08:00: ------数据库连接成功！------

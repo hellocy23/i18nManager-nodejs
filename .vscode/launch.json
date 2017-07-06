@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch via NPM",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "npm",
+            "protocol": "auto",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script", "node-vscode-debug"
+            ],
+            "port": 5858
+        }, 
+        {
+            "name": "Attach to Process",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 5858
+        }
+    ]
+}
