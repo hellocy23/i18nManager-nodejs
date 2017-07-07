@@ -43,7 +43,7 @@
     "serve-favicon": "~2.4.2",
     "underscore": "^1.8.3",
     "xls-to-json-lc": "^0.3.3",
-    "xlsx-to-json-lc": "^0.2.5",
+    "xlsx-to-json-depfix": "^0.2.5",
     "zip-folder": "^1.0.0"
   },
   "devDependencies": {

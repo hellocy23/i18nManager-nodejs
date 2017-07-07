@@ -2,7 +2,7 @@ import { I18nItemModel } from '../Models/I18nItemModel';
 import { projectListModel } from '../Models/I18nProjectModel';
 import multer from 'multer'; // 上传模块
 import xlstojson from "xls-to-json-lc";
-import xlsxtojson from "xlsx-to-json-lc";
+import xlsxtojson from "xlsx-to-json-depfix";
 import fsExtra from 'fs-extra';
 import path from 'path';
 import _ from 'underscore';
