@@ -27,6 +27,7 @@
             "repo": "https://github.com/cyh5kf/i18nManager-nodejs.git",
             "path": "/www/production",
             "ssh_options": "StrictHostKeyChecking=no",
+            "post-deploy": "cnpm install && npm run build && npm run pm2",
             "env"  : {
                 "NODE_ENV": "production"
             }

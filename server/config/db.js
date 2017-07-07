@@ -1,4 +1,3 @@
-import config from './config';
 import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
 console.log(`env: ${process.env.NODE_ENV}`);

@@ -11,8 +11,8 @@
     "node-vscode-debug": "cross-env NODE_ENV=development babel-node --debug-brk --nolazy ./server/app.js",
     "nodemon-debug": "cross-env NODE_ENV=development nodemon --debug-brk=5858 --ignore ./client --watch ./server ./server/app.js --exec babel-node",
     "node-dev": "cross-env NODE_ENV=development nodemon --inspect --debug-brk --ignore ./client --watch ./server ./server/app.js --exec babel-node",
-    "node-build": "cross-env NODE_ENV=production babel-node ./server/app.js",
-    "pm2": "cross-env NODE_ENV=production pm2 start processes.json",
+    "node-build": "cross-env NODE_ENV=development babel-node ./server/app.js",
+    "pm2": "cross-env NODE_ENV=production pm2 startOrRestart ecosystem.json",
     "build-dev": "cross-env NODE_ENV=development  webpack-dev-server  --config ./client/webpack.config.js --hot --inline --progress --colors",
     "build": "cross-env NODE_ENV=production webpack  --config ./client/webpack.config.js --progress --profile --colors"
   },
