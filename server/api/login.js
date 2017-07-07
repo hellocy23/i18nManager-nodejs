@@ -1,4 +1,4 @@
-import LoginModel from '../Models/LoginModel';
+import LoginModel from '../models/LoginModel';
 import jwt from 'jwt-simple';
 import moment from 'moment';
 

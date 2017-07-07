@@ -1,5 +1,5 @@
-import { projectListModel } from '../Models/I18nProjectModel';
-import { I18nItemModel } from '../Models/I18nItemModel';
+import { projectListModel } from '../models/I18nProjectModel';
+import { I18nItemModel } from '../models/I18nItemModel';
 import fs from 'fs';
 import path from 'path';
 import zipFolder from 'zip-folder';
