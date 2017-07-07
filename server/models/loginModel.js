@@ -6,6 +6,6 @@ const LoginSchema = new mongoose.Schema({
     passwd: { type: Number}
 }, { versionKey: false });
 
-const LoginModel = db.model("logins", LoginSchema );
+const loginModel = db.model("logins", LoginSchema );
 
-export default LoginModel;
+export default loginModel;

@@ -2,8 +2,8 @@ import Express from 'express';
 import login from './login';
 import bodyParser from 'body-parser';
 import jwtAuth from '../middleware/jwtAuth';
-import { getProjectList, addProject, updateProject, exportProjectI18nResource, deleteProject, exportProjectAllI18nResource } from './I18nProject';
-import { queryItem, addItem, updateItemById, deleteItem, batchImportUploadByExcel } from './I18nItem';
+import { getProjectList, addProject, updateProject, exportProjectI18nResource, deleteProject, exportProjectAllI18nResource } from './i18nProject';
+import { queryItem, addItem, updateItemById, deleteItem, batchImportUploadByExcel } from './i18nItem';
 const router = Express.Router();
 
 //登录接口

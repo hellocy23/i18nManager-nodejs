@@ -1,5 +1,5 @@
-import { I18nItemModel } from '../models/I18nItemModel';
-import { projectListModel } from '../models/I18nProjectModel';
+import { i18nItemModel } from '../models/i18nItemModel';
+import { projectListModel } from '../models/i18nProjectModel';
 import multer from 'multer'; // 上传模块
 import xlstojson from "xls-to-json-lc";
 import xlsxtojson from "xlsx-to-json-depfix";
@@ -19,7 +19,7 @@ export const queryItem = (req, res, next) => {
         queryConditons[searchTypeKey] = new RegExp(searchTypeValue);
     }
 
-    I18nItemModel.paginate(queryConditons, { page: limitStart, limit: limitSize }, function (err, result) {
+    i18nItemModel.paginate(queryConditons, { page: limitStart, limit: limitSize }, function (err, result) {
         if (err) {
             return res.status(500).end('server error');
         } else {
@@ -46,11 +46,11 @@ export const addItem = (req, res, next) => {
     item_data[value_key] = value_data;
     const conditions = { source_key: source_key };
 
-    I18nItemModel.findOne(conditions, (error, data) => {
+    i18nItemModel.findOne(conditions, (error, data) => {
         if (error) {
             return res.status(500).end('server error');
         } else if (data) {
-            I18nItemModel.update(conditions, item_data, function (error) {
+            i18nItemModel.update(conditions, item_data, function (error) {
                 if (error) {
                     return res.status(500).end('server error');
                 } else {
@@ -58,7 +58,7 @@ export const addItem = (req, res, next) => {
                 }
             });
         } else {
-            I18nItemModel.create(item_data, (error, data) => {
+            i18nItemModel.create(item_data, (error, data) => {
                 if (error) {
                     return res.status(500).end('server error');
                 } else {
@@ -87,7 +87,7 @@ export const updateItemById = (req, res, next) => {
         }
     }
     const conditions = { source_key: source_key };
-    I18nItemModel.update(conditions, item_data, function (error) {
+    i18nItemModel.update(conditions, item_data, function (error) {
         if (error) {
             return res.status(500).end('server error');
         } else {
@@ -102,7 +102,7 @@ export const deleteItem = (req, res, next) => {
     const { source_key } = req.body;
     const conditions = { source_key: source_key };
 
-    I18nItemModel.remove(conditions, function (error) {
+    i18nItemModel.remove(conditions, function (error) {
         if (error) {
             return res.status(500).end('server error');
         } else {
@@ -158,7 +158,7 @@ const importDataToMongodb = (req, res, projects, languageArray, result) => {
         }
 
         (function(item_data, projects, conditions) {
-            I18nItemModel.findOne(conditions, (error, data) => {
+            i18nItemModel.findOne(conditions, (error, data) => {
                 if (error) {
                     return res.status(500).end('server error');
                 } else if (data) {
@@ -167,7 +167,7 @@ const importDataToMongodb = (req, res, projects, languageArray, result) => {
                     const addProjectsArray = parseMultiValueString(projects);
                     const newProjectsArray = _.union(oldProjectsArray, addProjectsArray);
                     item_data.projects = toMutiValueString(newProjectsArray);
-                    I18nItemModel.update(conditions, {$set: item_data}, (err)=> {
+                    i18nItemModel.update(conditions, {$set: item_data}, (err)=> {
                         if(err) {
                             console.log(err);
                             return res.status(500).end('server error');
@@ -177,7 +177,7 @@ const importDataToMongodb = (req, res, projects, languageArray, result) => {
                 } else {
                     //不存在该source_key,则新增文档
                     item_data.projects = projects;
-                    I18nItemModel.create(item_data, (error, data) => {
+                    i18nItemModel.create(item_data, (error, data) => {
                         if (error) {
                             return res.status(500).end('server error');
                         }

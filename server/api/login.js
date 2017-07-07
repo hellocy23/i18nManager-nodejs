@@ -1,10 +1,10 @@
-import LoginModel from '../models/LoginModel';
+import loginModel from '../models/loginModel';
 import jwt from 'jwt-simple';
 import moment from 'moment';
 
 export default function(req,res,next){
     const {email, passwd} = req.query;
-    LoginModel.findOne({email: email}, (error,data)=> {
+    loginModel.findOne({email: email}, (error,data)=> {
         if(error){
             // user not found
             return res.status(500);

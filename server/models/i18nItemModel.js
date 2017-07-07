@@ -41,6 +41,6 @@ const i18nItemSchema = new mongoose.Schema({
 
 i18nItemSchema.plugin(mongoosePaginate);
 
-export const I18nItemModel = db.model("i18nitems", i18nItemSchema);
+export const i18nItemModel = db.model("i18nitems", i18nItemSchema);
 
 

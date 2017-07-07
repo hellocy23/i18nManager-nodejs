@@ -1,5 +1,5 @@
-import { projectListModel } from '../models/I18nProjectModel';
-import { I18nItemModel } from '../models/I18nItemModel';
+import { projectListModel } from '../models/i18nProjectModel';
+import { i18nItemModel } from '../models/i18nItemModel';
 import fs from 'fs';
 import path from 'path';
 import zipFolder from 'zip-folder';
@@ -85,7 +85,7 @@ export const deleteProject = (req, res, next) => {
     }
     //删除该项目后，同时删除item列表里projects对应的该项目
     //先查找所有包含该项目的文档，然后通过循环文档，更新文档里的projects
-    I18nItemModel.find(I18nItemConditions, (error, docs) => {
+    i18nItemModel.find(I18nItemConditions, (error, docs) => {
         if (error) {
             console.log(error);
         } else if (docs) {
@@ -95,7 +95,7 @@ export const deleteProject = (req, res, next) => {
                 let newProjects = _.without(projectsArray, projectId);
                 newProjects = toMutiValueString(newProjects);
                 const updataDate = { projects: newProjects };
-                I18nItemModel.update({ source_key: source_key }, { $set: updataDate }, (error, data) => {
+                i18nItemModel.update({ source_key: source_key }, { $set: updataDate }, (error, data) => {
                     if (error) {
                         console.log(error);
                     }
@@ -116,7 +116,7 @@ export const exportProjectI18nResource = (req, res, next) => {
         projects: new RegExp(projectId),
     }
     const writeOrDownload = 'download';
-    I18nItemModel.find(conditions, (error, docs) => {
+    i18nItemModel.find(conditions, (error, docs) => {
         if (format === 'Android') {
             exportXml(req, res, docs, langCode, value_key, writeOrDownload);
         } else if (format === 'IOS') {
@@ -226,7 +226,7 @@ export const exportProjectAllI18nResource = (req, res, next) => {
     const conditions = {
         projects: new RegExp(projectId),
     }
-    I18nItemModel.find(conditions, (error, docs) => {
+    i18nItemModel.find(conditions, (error, docs) => {
         //每次导出前先清空文件夹
         const emptyAndroidPath = path.join(__dirname, '../public/export/Android');
         const emptyIOSPath = path.join(__dirname, '../public/export/IOS');
