@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import db from './db';
+import db from '../config/db';
+
 const LoginSchema = new mongoose.Schema({
     email : { type: String },
     passwd: { type: Number}

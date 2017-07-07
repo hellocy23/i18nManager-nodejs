@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate';
-import db from './db';
+import db from '../config/db';
 
 const i18nItemSchema = new mongoose.Schema({
     source_key : { type: String }, 

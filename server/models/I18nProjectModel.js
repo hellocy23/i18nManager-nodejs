@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import db from './db';
+import db from '../config/db';
 
 const projectListSchema = new mongoose.Schema({
     name : { type: String },

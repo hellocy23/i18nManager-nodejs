@@ -1,0 +1,31 @@
+{
+    "apps": [
+        {
+            "name": "i18nManager", //名称
+            "script": "server/app.js", //程序入库
+            "cwd": "./", //根目录
+            "env": {
+                "COMMON_VARIABLE": "true"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ],
+    "deploy": {
+        "production": {
+            "user": "yu_manager",
+            "host": [
+                "47.94.211.202"
+            ],
+            "port": "3389",
+            "ref": "origin/master",
+            "repo": "https://github.com/cyh5kf/i18nManager-nodejs.git",
+            "path": "/www/production",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "env"  : {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}
