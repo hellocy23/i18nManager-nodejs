@@ -11,8 +11,6 @@
                 "NODE_ENV": "production"
             },
             "exec_interpreter": "babel-node",
-            "error_file":"./server/logs/app-err.log",//错误输出日志
-            "out_file":"./server/logs/app-out.log",  //日志
             "log_date_format":"YYYY-MM-DD HH:mm Z" //日期格式
         }
     ],
@@ -35,4 +33,3 @@
     }
 }
 
-//通过 pm2 deploy ecosystem.json production  部署项目到服务器
