@@ -25,7 +25,7 @@
             "port": "3389",
             "ref": "origin/master",
             "repo": "https://github.com/cyh5kf/i18nManager-nodejs.git",
-            "path": "/www/production",
+            "path": "/www/i18n/production",
             "ssh_options": "StrictHostKeyChecking=no",
             "post-deploy": "cnpm install && npm run build && pm2 startOrRestart ecosystem.json --env production",
             "env"  : {
