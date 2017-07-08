@@ -8,6 +8,3 @@ npm-debug.log
 # build file
 build
 dist
-export
-exportZip
-uploads
