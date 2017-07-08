@@ -7,7 +7,7 @@ import fsExtra from 'fs-extra';
 import path from 'path';
 import _ from 'underscore';
 import languageMap from '../const';
-import {toMutiValueString, parseMultiValueString} from '../StringUtils';
+import { toMutiValueString, parseMultiValueString } from '../StringUtils';
 
 //查询I18nItem数据
 export const queryItem = (req, res, next) => {
@@ -81,7 +81,7 @@ export const updateItemById = (req, res, next) => {
         projects: projects
     }
     for (let childKey in reqValues) {
-        if(childKey.indexOf('value_') != -1) {
+        if (childKey.indexOf('value_') != -1) {
             let value_data = reqValues[childKey];
             item_data[childKey] = value_data;
         }
@@ -118,7 +118,7 @@ const storage = multer.diskStorage({ //multers disk storage settings
     },
     filename: function (req, file, cb) {
         var datetimestamp = Date.now();
-        cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1])
+        cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length - 1])
     }
 });
 
@@ -136,7 +136,7 @@ const upload = multer({ //multer settings
 //将表格json数据存到数据库
 const importDataToMongodb = (req, res, projects, languageArray, result) => {
     for (var value of result) {
-        var key = value.key;
+        var key = value.Key;
         var languages = languageArray.split(",");
         var conditions = { source_key: key };
         var item_data = {
@@ -145,10 +145,10 @@ const importDataToMongodb = (req, res, projects, languageArray, result) => {
 
         //所选项目包含几种语言就导入几种语言
         for (var childKey in value) {
-            if(childKey != "key") {
-                for(let language of languages) {
-                    let languageCode = languageMap[childKey];
-                    if(language === languageCode) {
+            if (childKey != "Key") {
+                for (let language of languages) {
+                    var languageCode = languageMap[childKey];
+                    if (language === languageCode) {
                         let value_key = `value_${languageCode}`;
                         let value_data = value[childKey];
                         item_data[value_key] = value_data;
@@ -156,34 +156,35 @@ const importDataToMongodb = (req, res, projects, languageArray, result) => {
                 }
             }
         }
+        (function (item_data, projects, conditions) {
+            if (conditions.source_key) {
+                i18nItemModel.findOne(conditions, (error, data) => {
+                    if (error) {
+                        return res.status(500).end('server error');
+                    } else if (data) {
+                        //存在该source_key，先删除该文档，再新建文档，根据项目设定的语言种类导入
+                        const oldProjectsArray = parseMultiValueString(data._doc.projects);
+                        const addProjectsArray = parseMultiValueString(projects);
+                        const newProjectsArray = _.union(oldProjectsArray, addProjectsArray);
+                        item_data.projects = toMutiValueString(newProjectsArray);
+                        i18nItemModel.update(conditions, { $set: item_data }, (err) => {
+                            if (err) {
+                                console.log(err);
+                                return res.status(500).end('server error');
+                            }
+                        })
 
-        (function(item_data, projects, conditions) {
-            i18nItemModel.findOne(conditions, (error, data) => {
-                if (error) {
-                    return res.status(500).end('server error');
-                } else if (data) {
-                    //存在该source_key，先删除该文档，再新建文档，根据项目设定的语言种类导入
-                    const oldProjectsArray = parseMultiValueString(data._doc.projects);
-                    const addProjectsArray = parseMultiValueString(projects);
-                    const newProjectsArray = _.union(oldProjectsArray, addProjectsArray);
-                    item_data.projects = toMutiValueString(newProjectsArray);
-                    i18nItemModel.update(conditions, {$set: item_data}, (err)=> {
-                        if(err) {
-                            console.log(err);
-                            return res.status(500).end('server error');
-                        }
-                    })
-                    
-                } else {
-                    //不存在该source_key,则新增文档
-                    item_data.projects = projects;
-                    i18nItemModel.create(item_data, (error, data) => {
-                        if (error) {
-                            return res.status(500).end('server error');
-                        }
-                    });
-                }
-            })
+                    } else {
+                        //不存在该source_key,则新增文档
+                        item_data.projects = projects;
+                        i18nItemModel.create(item_data, (error, data) => {
+                            if (error) {
+                                return res.status(500).end('server error');
+                            }
+                        });
+                    }
+                })
+            }
         })(item_data, projects, conditions);
 
     }
@@ -200,7 +201,7 @@ export const batchImportUploadByExcel = (req, res, next) => {
     fsExtra.emptyDir(emptyPath, err => {
         if (err) {
             return console.error(err)
-        } 
+        }
         console.log('empty uploads success!');
         upload(req, res, function (err) {
             const projects = req.body.projects;
@@ -227,11 +228,11 @@ export const batchImportUploadByExcel = (req, res, next) => {
                     lowerCaseHeaders: true
                 }, function (err, result) {
                     if (err) {
-                        return res.status(404).json({err_desc: err});
+                        return res.status(404).json({ err_desc: err });
                     }
                     importDataToMongodb(req, res, projects, languageArray, result);
                     return res.status(200).end('import excel success!');
-                    
+
                 });
             } catch (e) {
                 res.status(404).json({ err_desc: "Corupted excel file" });
