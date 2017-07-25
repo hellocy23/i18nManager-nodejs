@@ -159,7 +159,7 @@ export default class ModifyOrAddI18nItemDialog extends React.Component {
         var {actions,store} = this.props;
         var dialogData = store.dialogData_ModifyOrAddI18nItemDialog;
         var formValue = theForm.getCurStateValue();
-        var source_key = formValue.source_key;
+        var source_key = formValue.new_source_key;
         console.log('Received values of form: ', formValue);
         if (source_key) {
             this.setState({loading: true});
