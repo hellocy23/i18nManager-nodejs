@@ -36,15 +36,15 @@ export const queryItem = (req, res, next) => {
 
 //添加一条I18nItem数据
 export const addItem = (req, res, next) => {
-    const { source_key, projects, selectLanguage } = req.body;
+    const { new_source_key, projects, selectLanguage } = req.body;
     const value_key = `value_${selectLanguage}`;
     const value_data = req.body[value_key];
     const item_data = {
-        source_key: source_key,
+        source_key: new_source_key,
         projects: projects
     }
     item_data[value_key] = value_data;
-    const conditions = { source_key: source_key };
+    const conditions = { source_key: new_source_key };
 
     i18nItemModel.findOne(conditions, (error, data) => {
         if (error) {

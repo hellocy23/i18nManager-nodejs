@@ -168,13 +168,8 @@ export default class I18nMainComposer extends React.Component {
             values.projects = projectString;
         }
 
-        var source_key = (values['source_key']||'').trim();
-        values['source_key'] = source_key;
-
-
         if (dialogData) {
             //修改
-
             updateI18nItemByIdRequest(values).then(()=> {
                 message.success('Update I18n Item Successfully');
                 this.doQueryI18nItemList(this.state.queryCondition).then(()=>{
@@ -187,7 +182,6 @@ export default class I18nMainComposer extends React.Component {
             });
 
         } else {
-
             //新建
             addI18nItemRequest(values).then(()=> {
                 message.success('Add I18n Item Successfully');
